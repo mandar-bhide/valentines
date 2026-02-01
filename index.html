@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentines</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 90vh;
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+        button{
+            width: 70px;
+            display: block;
+            cursor: pointer;
+            background-color: blanchedalmond;
+            border: 2px solid black;
+            margin: 20px;
+            padding: 10px;
+            border-radius: 20px;
+            transition-duration: 400ms;
+        }
+
+        #screen1{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #screen2{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+    </style>
+    <script>
+        window.onload = function(){
+            document.getElementById("screen2").style.visibility = "hidden";
+            const noButton = document.getElementById("no");
+            const yesButton = document.getElementById("yes");
+            noButton.addEventListener("mouseenter",(event)=>{
+                noButton.style.position = 'absolute';
+                const randomX = Math.floor((Math.random() * 80)+10);
+                const randomY = Math.floor((Math.random() * 80)+10);
+                noButton.style.top = randomY + "%";
+                noButton.style.left = randomX + "%";
+            })
+            yesButton.addEventListener('click',(event)=>{
+                document.getElementById("screen1").style.visibility = "hidden";
+                setTimeout(()=>{                    
+                    document.getElementById("screen2").style.visibility = "visible";
+                },500)
+            })
+        }
+    </script>
+</head>
+<body>
+    <div id="screen1">
+        <h1>Will you be my valentine?</h1>
+        <div class="container">
+            <button id="yes">Yes😍</button>
+            <button id="no">No😒</button>
+        </div>
+    </div>
+    <div id="screen2">
+        <h1>Its a Date! 🥰</h1>
+    </div>
+</body>
+</html>
