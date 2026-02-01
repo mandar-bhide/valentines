@@ -60,6 +60,13 @@
                 noButton.style.top = randomY + "%";
                 noButton.style.left = randomX + "%";
             })
+            noButton.addEventListener("mouseenter",(event)=>{
+                noButton.style.position = 'absolute';
+                const randomX = Math.floor((Math.random() * 80)+10);
+                const randomY = Math.floor((Math.random() * 80)+10);
+                noButton.style.top = randomY + "%";
+                noButton.style.left = randomX + "%";
+            })
             yesButton.addEventListener('click',(event)=>{
                 document.getElementById("screen1").style.visibility = "hidden";
                 setTimeout(()=>{                    
@@ -81,4 +88,5 @@
         <h1>Its a Date! 🥰</h1>
     </div>
 </body>
+
 </html>
